@@ -1,0 +1,276 @@
+*{
+    margin: auto;
+	box-sizing: border-box;
+}
+
+header{
+    height: 100px;
+    background: linear-gradient(to right,#cb11ab 0,#481173 100%) no-repeat;
+    position: relative;
+    display: flex;
+    text-align: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 0 20px 0 20px;
+}
+
+.logo{
+    cursor: pointer;
+    width: 12,5vw;
+}
+
+#search{
+    width: 50vw;
+    font-size: 18px;
+    line-height: 24px;
+    -webkit-transition: background .3s ease 0s;
+    transition: background .3s ease 0s;
+    color: rgba(255,255,255,.5);
+    padding: 16px 120px 16px 44px;
+    border-radius: 56px;
+    background-color: rgba(255,255,255,.2);
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    
+}
+
+#search::placeholder{
+    color: rgba(255,255,255,.5);
+}
+
+.search-loop{
+    background-image: url(assets/694985.png);
+    background-repeat: no-repeat;
+    background-position: 18px 18px;
+    background-size: 20px;
+}
+
+
+
+
+.basket{
+    background: url(data:image/svg+xml,%3Csvg%20width%3D%2227%22%20height%3D%2224%22%20viewBox%3D%220%200%2027%2024%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M8.5%201.5C8.5%202.5%206%202.5%204.5%202.5C3%202.5%200.5%202.5%200.5%201.5C0.5%200.5%203%200.5%204.5%200.5C6%200.5%208.5%200.5%208.5%201.5ZM11.8212%2016.119C11.3452%2016.1949%2010.8829%2015.9206%2010.7214%2015.4665L7.48289%206.35812C7.24913%205.70067%207.74355%205.01199%208.44122%205.02324L25.8008%205.30317C26.425%205.31324%2026.8875%205.88644%2026.7654%206.49865L25.4106%2013.2909C25.3288%2013.701%2025.0004%2014.017%2024.5874%2014.0828L11.8212%2016.119ZM13.6523%2021.0331C13.6523%2022.3178%2012.6109%2023.3593%2011.3262%2023.3593C10.0415%2023.3593%209%2022.3178%209%2021.0331C9%2019.7484%2010.0415%2018.707%2011.3262%2018.707C12.6109%2018.707%2013.6523%2019.7484%2013.6523%2021.0331ZM22.957%2023.3593C24.2417%2023.3593%2025.2832%2022.3178%2025.2832%2021.0331C25.2832%2019.7484%2024.2417%2018.707%2022.957%2018.707C21.6723%2018.707%2020.6309%2019.7484%2020.6309%2021.0331C20.6309%2022.3178%2021.6723%2023.3593%2022.957%2023.3593Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A) center/contain no-repeat;
+    display: block;
+    height: 27px;
+    margin: 0 auto 6px;
+    position: relative;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(255,255,255,.6);
+}
+
+.text-basket{
+    font-size: 17px;
+    line-height: 20px;
+    color: rgba(255,255,255,.6);
+    cursor: pointer;
+}
+
+
+/*
+ .CSSgal {
+	position: relative;
+	overflow: hidden;
+	height: 50vh;
+	width: 90vw;
+	margin-top: 20px;
+	border-radius: 56px;
+}
+
+
+
+.CSSgal .slider {
+	height: 100%;
+	white-space: nowrap;
+	font-size: 0;
+	transition: 0.8s;
+}
+
+
+
+.CSSgal .slider > * {
+	font-size: 1rem;
+	display: inline-block;
+	white-space: normal;
+	vertical-align: top;
+	height: 100%;
+	width: 100%;
+	background: none 50% no-repeat;
+	background-size: cover;
+}
+
+
+
+.CSSgal .prevNext {
+	position: absolute;
+	z-index: 1;
+	top: 50%;
+	width: 100%;
+	height: 0;
+}
+
+.CSSgal .prevNext > div+div {
+	visibility: hidden; 
+}
+
+.CSSgal .prevNext a {
+	background: #fff;
+	position: absolute;
+	width:       30px;
+	height:      30px;
+	text-align: center;
+	opacity: 0.7;
+	-webkit-transition: 0.3s;
+					transition: 0.3s;
+	-webkit-transform: translateY(-50%);
+					transform: translateY(-50%);
+	left: 0;
+}
+.CSSgal .prevNext a:hover {
+	opacity: 1;
+}
+.CSSgal .prevNext a+a {
+	left: auto;
+	right: 0;
+}
+
+
+
+.CSSgal .bullets {
+	position: absolute;
+	z-index: 2;
+	bottom: 0;
+	padding: 10px 0;
+	width: 100%;
+	text-align: center;
+}
+.CSSgal .bullets > a {
+	display: inline-block;
+	width:       15px;
+	height:      15px;	
+	background: rgba(255, 255, 255, 1);
+	-webkit-transition: 0.3s;
+					transition: 0.3s;
+}
+.CSSgal .bullets > a+a {
+	background: rgba(255, 255, 255, 0.5); 
+}
+.CSSgal .bullets > a:hover {
+	background: rgba(255, 255, 255, 0.7) !important;
+}
+
+
+.CSSgal >s:target ~ .bullets >* {      background: rgba(255, 255, 255, 0.5);}
+
+#s1:target ~ .bullets >*:nth-child(1) {background: rgba(255, 255, 255,   1);}
+#s2:target ~ .bullets >*:nth-child(2) {background: rgba(255, 255, 255,   1);}
+#s3:target ~ .bullets >*:nth-child(3) {background: rgba(255, 255, 255,   1);}
+
+.CSSgal >s:target ~ .prevNext >* {      visibility: hidden;}
+
+#s1:target ~ .prevNext >*:nth-child(1) {visibility: visible;}
+#s2:target ~ .prevNext >*:nth-child(2) {visibility: visible;}
+#s3:target ~ .prevNext >*:nth-child(3) {visibility: visible;}
+
+
+
+#s1:target ~ .slider {transform: translateX(   0%); -webkit-transform: translateX(   0%);}
+#s2:target ~ .slider {transform: translateX(-100%); -webkit-transform: translateX(-100%);}
+#s3:target ~ .slider {transform: translateX(-200%); -webkit-transform: translateX(-200%);}
+
+
+.CSSgal{
+	color: #fff;	
+	text-align: center;
+}
+
+.CSSgal a {
+	border-radius: 50%;
+	margin: 0 8px;
+	color: rgba(0,0,0,0.8);
+	text-decoration: none;
+}
+
+.arrow-left{
+	transform: rotate(270deg);
+	margin-top: 7px;
+}
+
+.arrow-right{
+	transform: rotate(90deg);
+	margin-top: 7px;
+} 
+*/
+
+.mySlides {
+	display: none;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 90%;
+  position: relative;
+  margin-top: 20px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin: 16px;
+  padding: 10px;
+  margin-top: -22px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 50px 50px 50px 50px;
+  user-select: none;
+  background-color: white;
+  opacity: 0.5;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: white;
+  opacity: 1;
+}
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #cb11ab4d;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #cb11ab;
+}
+
+/* Fading animation */
+.fade {
+  animation-duration: 1s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
