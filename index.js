@@ -13,16 +13,16 @@ function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
 
 let cardProducts = JSON.parse(localStorage.getItem('cardProducts')) || [];
@@ -32,7 +32,7 @@ let product = document.getElementById('products');
 let CardList = [];
 fetch('https://62602c5f53a42eaa07013c69.mockapi.io/wb/Products')
   .then((Response) => {
-      return Response.json()
+    return Response.json()
   })
 
   .then((CardList) => {
@@ -96,40 +96,47 @@ fetch('https://62602c5f53a42eaa07013c69.mockapi.io/wb/Products')
 
       product.append(productCard);
 
-      })
+    })
   })
 
-  .then(() =>{
+  .then(() => {
     let resize = [...document.getElementsByClassName("ProductImg")];
     resize.forEach((item) => {
       let modalWindow = item.nextSibling;
-      item.onclick = () =>{
+      item.onclick = () => {
         modalWindow.style.display = "block";
-        modalWindow.onclick = () =>{
+        modalWindow.onclick = () => {
           modalWindow.style.display = "none";
         }
       }
     })
   })
 
-  .then(() =>{
+  .then(() => {
     let butcard = [...document.getElementsByClassName("card")];
     butcard.forEach((item) => {
       let addToCard = item.nextSibling;
-      item.onclick = () =>{
-          
+      item.onclick = () => {
+
       }
     })
   })
 
-  document.getElementById("search").addEventListener("input", ( )=> {
+document.addEventListener('keydown', function (e) {
+  if (e.keyCode == 13) {
     for (let i = 1; i < 13; i++) {
-      if((document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[i]).toLowerCase()  || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[1]).toLowerCase() || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[1]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[2]).toLowerCase()  || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[1]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[2]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[3]).toLowerCase() || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[1]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[2]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[3]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[4]).toLowerCase()){
-        document.getElementById(`p-${i}`).parentElement.style.display = "block";
-      } 
-      else if(document.getElementById("search").value == ""){
+      if ((document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[i]).toLowerCase() || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[1]).toLowerCase() || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[1]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[2]).toLowerCase() || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[1]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[2]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[3]).toLowerCase() || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[1]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[2]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[3]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[4]).toLowerCase()) {
         document.getElementById(`p-${i}`).parentElement.style.display = "block";
       }
       else document.getElementById(`p-${i}`).parentElement.style.display = "none";
     }
-  }) 
+  }
+})
+
+document.getElementById('search').addEventListener('input', () => {
+  for (let i = 1; i < 13; i++) {
+    if (document.getElementById("search").value == "") {
+      document.getElementById(`p-${i}`).parentElement.style.display = "block";
+    }
+  }
+})
