@@ -29,6 +29,7 @@ let cardProducts = JSON.parse(localStorage.getItem('cardProducts')) || [];
 
 let product = document.getElementById('products');
 
+<<<<<<< HEAD
 function cardItem(title,price){
   this.title = title;
   this.price = price;
@@ -36,6 +37,8 @@ function cardItem(title,price){
 
 
 
+=======
+>>>>>>> a414a9b7271cc6f2491493f85bd1a1c15cf1e008
 let CardList = [];
 fetch('https://62602c5f53a42eaa07013c69.mockapi.io/wb/Products')
   .then((Response) => {
@@ -122,6 +125,7 @@ fetch('https://62602c5f53a42eaa07013c69.mockapi.io/wb/Products')
   .then(() => {
     let butcard = [...document.getElementsByClassName("card")];
     butcard.forEach((item) => {
+<<<<<<< HEAD
       item.onclick = () => {
         cardProducts.push(new cardItem(item.parentElement.parentElement.nextElementSibling.nextElementSibling.innerText,item.parentElement.parentElement.nextElementSibling.firstChild.innerText));
         localStorage.setItem('cardProducts',JSON.stringify(cardProducts))
@@ -147,15 +151,27 @@ fetch('https://62602c5f53a42eaa07013c69.mockapi.io/wb/Products')
   })
 
 
+=======
+      let addToCard = item.nextSibling;
+      item.onclick = () => {
+
+      }
+    })
+  })
+
+>>>>>>> a414a9b7271cc6f2491493f85bd1a1c15cf1e008
 document.addEventListener('keydown', function (e) {
   if (e.keyCode == 13) {
     for (let i = 1; i < 13; i++) {
       if ((document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[i]).toLowerCase() || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[1]).toLowerCase() || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[1]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[2]).toLowerCase() || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[1]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[2]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[3]).toLowerCase() || (document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).split("")[0]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[1]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[2]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[3]).toLowerCase() + ((document.getElementById(`p-${i}`).innerText).split("")[4]).toLowerCase()) {
         document.getElementById(`p-${i}`).parentElement.style.display = "block";
       }
+<<<<<<< HEAD
       else if((document.getElementById("search").value).toLowerCase() == ((document.getElementById(`p-${i}`).innerText).toLowerCase())){
         document.getElementById(`p-${i}`).parentElement.style.display = "block";
       }
+=======
+>>>>>>> a414a9b7271cc6f2491493f85bd1a1c15cf1e008
       else document.getElementById(`p-${i}`).parentElement.style.display = "none";
     }
   }
@@ -168,6 +184,7 @@ document.getElementById('search').addEventListener('input', () => {
     }
   }
 })
+<<<<<<< HEAD
 
 document.getElementById("basket").onclick = () => {
  
@@ -176,3 +193,5 @@ document.getElementById("basket").onclick = () => {
     document.getElementById("modalCard").style.display = "none";
   }
 }
+=======
+>>>>>>> a414a9b7271cc6f2491493f85bd1a1c15cf1e008

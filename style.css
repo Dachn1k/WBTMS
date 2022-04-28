@@ -235,6 +235,7 @@ header{
   background-color: rgb(0, 0, 0);
   background-color: rgba(0, 0, 0, 0.9);
 }
+<<<<<<< HEAD
 
 .modalCard{
   position: absolute;
@@ -288,3 +289,5 @@ header{
   cursor: pointer;
   background-color: plum;
 }
+=======
+>>>>>>> a414a9b7271cc6f2491493f85bd1a1c15cf1e008
